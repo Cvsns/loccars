@@ -1,0 +1,24 @@
+<nav class="navbar-top" data-controller="navbar">
+    <%= form_with url: car_path, method: :get, id: "d-flexs" do %>
+      <%= text_field_tag :query,params[:query],class: "form-control-navbar",placeholder: "Trouve ton fromage", data: { navbar_target: "value" }%>
+      <i class="fa fa-search" data-action="click->navbar#display" data-navbar-target="btn"></i>
+      <%= button_tag class: "d-none", id: "button-test", data: { navbar_target: "btn2" } do %>
+        <i class="fa fa-search"></i>
+      <% end %>
+    <% end %>
+    <%= link_to root_path do %>
+      <%= image_tag 'logo_simple.png', class: "logofrom", data: {navbar_target: "logo" }%>
+    <% end %>
+    <i class="fa-solid fa-bars" id="menu-icon" data-action="click->navbar#displayLink" ></i>
+    <div class="all_link" data-navbar-target="link">
+    <%= link_to userprofiles_profil_path do %>
+    <p class="lienn">Mon profil</p>
+    <% end %>
+    <%= link_to car_path do %>
+    <p class="lienn">Home</p>
+    <% end %>
+    <%= link_to destroy_user_session_path do %>
+    <p class="lien">Déconnexion</p>
+    <% end %>
+    </div>
+</nav>

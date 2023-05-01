@@ -1,0 +1,81 @@
+// Specific CSS for your home-page
+
+
+.liens img {
+  border: 1px solid rgb(17, 43, 158);
+}
+.luxcar {
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+.luxcar img {
+  border: 1px solid rgb(17, 43, 158);
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+}
+.liens {
+  color: black;
+  text-decoration: none;
+  color: white;
+}
+.container-fluid {
+box-shadow: 3px 3px 0px 0px ;
+}
+.home img {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 0px 0px ;
+}
+
+.luxcar {
+  overflow: hidden;
+}
+.luxcar img {
+  border-radius: 20px;
+  box-shadow: 3px 3px 0px 0px ;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.luxcar:hover img {
+  transform: scale(0.9);
+}
+.tesla {
+  height: 370px;
+  width: 300px;
+}
+
+.footer {
+  background-color: rgba(128, 128, 128, 0.234);
+  color: black;
+  text-align: center;
+  padding: 11px;
+  margin-top: 20px;
+
+}
+.footer-pay {
+background-color: rgba(128, 128, 128, 0.234);
+color: black;
+text-align: center;
+padding: 11px;
+position: fixed;
+bottom: 0;
+right: 0;
+}
+.dropdown img {
+  width: 43px;
+}
+
+
+.home img {
+  margin: 6px;
+  transition: transform 0.5s ease;
+}
+
+.home img:hover {
+  transform: rotateY(180deg);
+}

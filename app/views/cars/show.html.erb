@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h1><%= @car.brand %> <%= @car.model %></h1>
+      <p>Year of production: <%= @car.year_of_production %></p>
+      <p>Address: <%= @car.address %></p>
+      <p>Price per day: <%= number_to_currency(@car.price_per_day) %></p>
+      <%= link_to "Back to Cars List", cars_path, class: "btn btn-secondary" %>
+    </div>
+    <div class="col-md-4">
+      <h2>Make a Reservation</h2>
+      <%= form_with model: [ @car, @car.bookings.build ], local: true do |form| %>
+        <div class="form-group">
+          <%= form.label :starts_at, "Start Date and Time" %>
+          <%= form.text_field :starts_at, class: "form-control", id: "booking-start-datetime" %>
+        </div>
+        <div class="form-group">
+          <%= form.label :ends_at, "End Date and Time" %>
+          <%= form.text_field :ends_at, class: "form-control", id: "booking-end-datetime" %>
+        </div>
+        <%= form.submit "Reserve", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+    <div class="footer-pay">
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="footer-copyright">
+        This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    flatpickr("#booking-start-datetime", {
+      enableTime: true,
+      dateFormat: "Y-m-d",
+      time_24hr: true,
+      inline: true
+    });
+
+    flatpickr("#booking-end-datetime", {
+      enableTime: true,
+      dateFormat: "Y-m-d",
+      time_24hr: true,
+      inline: true
+    });
+  });
+</script>
