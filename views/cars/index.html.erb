@@ -1,0 +1,29 @@
+<center><h1>Cars Luxe List </h1></center>
+<div class="container">
+  <div class="row">
+    <% @cars.each do |car| %>
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="luxcar">
+          <div class="liens">
+            <%= link_to "#{car.brand} #{car.model}", car_path(car) %>
+          </div>
+          <%= link_to car_path(car) do %>
+            <img src="<%= "https://source.unsplash.com/random/300x200?#{car.brand}#{car.model}" %>" alt="Photo of <%= car.brand %> <%= car.model %>" style="border-radius: 5px; width: 100%">
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+     Your dream becomes reality 🌟
+    </div>
+  </div>
+</div>
